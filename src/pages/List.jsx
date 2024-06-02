@@ -37,7 +37,7 @@ export const List = () => {
                 ) : (
                     playlists.map((playlist, index) => (
                         <div key={index} className="bg-white shadow-lg p-4 rounded-lg m-4 w-80 flex justify-between items-center">
-                            <Link to={`/playlist/${playlist.id}`} className="block p-2 text-center">{playlist.name}</Link>
+                            <Link to={`/playlist/${playlist.name}`} className="block p-2 text-center">{playlist.name}</Link>
                             <FaShareAlt className="cursor-pointer" onClick={() => handleShare(playlist.publicId)} />
                         </div>
                     ))
@@ -46,4 +46,3 @@ export const List = () => {
         </div>
     );
 };
-
