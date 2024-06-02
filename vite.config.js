@@ -9,8 +9,5 @@ export default defineConfig({
     outDir: 'dist',
   },
   vercel: {
-    rewrites: [
-      { "source": "/(.*)", "destination": "/index.html" }
-    ]
-  }
+    
 })
