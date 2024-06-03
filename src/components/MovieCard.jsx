@@ -131,7 +131,7 @@ export const MovieCard = () => {
                         <select value={playlistName} onChange={(e) => setPlaylistName(e.target.value)} className="mb-4 p-2 border rounded">
                             <option value="">Select or type new playlist</option>
                             {playlists.map((playlist, index) => (
-                                <option key={index} value={playlist}>{playlist}</option>
+                                <option key={index} value={playlist.name}>{playlist.name}</option>
                             ))}
                         </select>
                         <InputBox
