@@ -110,11 +110,7 @@ export const MovieCard = () => {
                     placeholder="Enter movie title"
                     className="mb-4 p-2 border rounded"
                 />
-                {!movie ? (
-                    <div className="flex justify-center items-center">
-                        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
-                    </div>
-                ) : (
+                {search && movie && (  // Add this check to conditionally render the movie details
                     <div className="card">
                         <Heading label={movie.Title} />
                         <SubHeading label="Movie Details" />
@@ -141,6 +137,11 @@ export const MovieCard = () => {
                             onChange={(e) => setPlaylistName(e.target.value)}
                         />
                         <Button label="Save Movie" onClick={() => saveMovie()} />
+                    </div>
+                )}
+                {!movie && search && (  // Show loading spinner only if search is not empty
+                    <div className="flex justify-center items-center">
+                        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
                     </div>
                 )}
             </div>
